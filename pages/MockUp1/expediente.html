@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Record - Serenity Clinic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#767c7e",
+                    "primary": "#0060ad",
+                    "surface-container-highest": "#dee3e5",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#fff7f6",
+                    "surface-container-high": "#e5e9eb",
+                    "secondary-fixed": "#c7fce7",
+                    "on-primary-fixed-variant": "#004681",
+                    "surface-container-low": "#f2f4f5",
+                    "tertiary": "#595994",
+                    "on-tertiary-container": "#32326b",
+                    "surface-tint": "#0060ad",
+                    "surface-bright": "#f8f9fa",
+                    "secondary-fixed-dim": "#baeed9",
+                    "tertiary-fixed-dim": "#a8a8e9",
+                    "on-tertiary-fixed-variant": "#3b3b74",
+                    "on-secondary-fixed-variant": "#3d6d5d",
+                    "secondary": "#376858",
+                    "on-surface-variant": "#5a6062",
+                    "surface": "#f8f9fa",
+                    "on-secondary": "#e4fff2",
+                    "on-primary-container": "#003d71",
+                    "on-background": "#2e3335",
+                    "surface-container": "#ebeef0",
+                    "surface-dim": "#d5dbdd",
+                    "secondary-dim": "#2b5c4c",
+                    "error-dim": "#70030f",
+                    "on-primary": "#f8f8ff",
+                    "error-container": "#f56965",
+                    "inverse-surface": "#0c0f10",
+                    "on-secondary-fixed": "#1f5041",
+                    "on-tertiary": "#fbf7ff",
+                    "tertiary-fixed": "#b6b5f7",
+                    "outline-variant": "#aeb3b5",
+                    "primary-fixed-dim": "#7fb6ff",
+                    "error": "#ac3434",
+                    "on-error-container": "#65000b",
+                    "secondary-container": "#c7fce7",
+                    "on-primary-fixed": "#00284e",
+                    "surface-variant": "#dee3e5",
+                    "inverse-on-surface": "#9b9d9e",
+                    "primary-fixed": "#9ac3ff",
+                    "inverse-primary": "#68abff",
+                    "background": "#f8f9fa",
+                    "on-surface": "#2e3335",
+                    "tertiary-container": "#b6b5f7",
+                    "primary-dim": "#005498",
+                    "tertiary-dim": "#4d4d87",
+                    "on-tertiary-fixed": "#1c1b54",
+                    "primary-container": "#9ac3ff",
+                    "on-secondary-container": "#326353"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background min-h-screen">
+<!-- SideNavBar -->
+<aside class="bg-slate-50 dark:bg-slate-900 h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-6 z-50 overflow-y-auto">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-bold text-slate-800 dark:text-slate-100">Serenity Clinic</h1>
+<p class="text-xs text-slate-500 font-medium tracking-wide">Admin Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center px-6 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">calendar_today</span>
+                Agenda
+            </a>
+<a class="flex items-center px-6 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">groups</span>
+                Patients
+            </a>
+<a class="flex items-center px-6 py-3 text-blue-700 dark:text-blue-400 font-bold border-r-4 border-blue-600 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">description</span>
+                Records
+            </a>
+<a class="flex items-center px-6 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">payments</span>
+                Payments
+            </a>
+<a class="flex items-center px-6 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">bar_chart</span>
+                Reports
+            </a>
+<a class="flex items-center px-6 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">account_balance</span>
+                Finances
+            </a>
+<a class="flex items-center px-6 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">person_add</span>
+                Users
+            </a>
+<a class="flex items-center px-6 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="px-6 pt-4 border-t border-slate-200 dark:border-slate-800">
+<a class="flex items-center px-2 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">help</span>
+                Help Center
+            </a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="bg-white/80 dark:bg-slate-950/80 backdrop-blur-md fixed top-0 right-0 left-64 h-16 z-40 flex items-center justify-between px-8 w-full shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/20 text-sm" placeholder="Search patient files..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="px-4 py-2 text-sm font-medium text-blue-700 dark:text-blue-400 hover:text-blue-500 transition-all">
+                Add Patient
+            </button>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-xl text-sm font-semibold hover:opacity-90 active:scale-95 transition-all">
+                Add Clinical Note
+            </button>
+<div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden ml-2">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="professional headshot of a friendly female clinical psychologist with glasses and a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ5iCograD_FWEYNY4DaHcFhG9c280F2TBvtO3MaOg49e8BID73HUo3yVkwCMO71VzmOa5hVhcJ4PqwJKLU3ES_IwtABA3uhyNrsQC_9_PkIoHLYHKX2aIDgpXcoVzdXE19pdB2_3tDzNmxcbaLwywMpWoC2Hgk8c3AWz2q1XnMz4K1LuEj-RJJJJTt4lDUCHUnV8fq8bm9HIcMvBtIUZabuu_bIwchLR_DGmz3Ib8u39KZvYF8WRDgngaimE2Ct1MSKOhxlNqDF4"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-12 pb-12">
+<!-- Patient Header -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm mb-8 flex flex-col md:flex-row gap-8 items-start md:items-center">
+<div class="relative">
+<div class="w-32 h-32 rounded-3xl overflow-hidden ring-4 ring-secondary-container">
+<img alt="Mariana Lopez" class="w-full h-full object-cover" data-alt="portrait of a young woman with a calm expression, wearing a soft lavender sweater, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLC2lDTdxMl11HRX4BdERDBCNnzhtY8pToNOP2RLvv6hvyITuxXBcfwl7ZGDOp_-_4SdKnHMvto8O7Pzou3QG-taCbKuti8hvLeuD3xw2vfWiGGQ5oS4sxLjnZc9IcVAs7ZVIF84v_e6J1Xo2rUjg0dy4OYkkFR-_v0s8gO4nlrzOlOuwZwEReMGyUUTl6Ltb58uEfjugHC9mNAeRZHY9E8IZgIAIwZyXpkQ7gaOB4kGPedmPGcI8vztLzwez7ZWWg5MbmXc64vwk"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-secondary text-on-secondary px-3 py-1 rounded-full text-xs font-bold shadow-sm">
+                    Active
+                </div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-4 mb-2">
+<h2 class="text-3xl font-extrabold text-on-background tracking-tight">Mariana Lopez</h2>
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container text-xs font-semibold rounded-full">Anxiety Disorder</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">calendar_today</span>
+<span class="text-sm font-medium">28 years old</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">call</span>
+<span class="text-sm font-medium">+52 55 1234 5678</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">mail</span>
+<span class="text-sm font-medium">mariana.lpz@email.com</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="p-3 bg-surface-container rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-3 bg-surface-container rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</section>
+<!-- View Tabs -->
+<div class="flex gap-8 mb-8 border-none overflow-x-auto pb-2">
+<button class="text-blue-600 font-bold border-b-2 border-blue-600 pb-2 px-1 transition-all whitespace-nowrap">Overview</button>
+<button class="text-slate-500 font-medium hover:text-blue-500 pb-2 px-1 transition-all whitespace-nowrap">Clinical History</button>
+<button class="text-slate-500 font-medium hover:text-blue-500 pb-2 px-1 transition-all whitespace-nowrap">Sessions</button>
+<button class="text-slate-500 font-medium hover:text-blue-500 pb-2 px-1 transition-all whitespace-nowrap">Attached Files</button>
+<button class="text-slate-500 font-medium hover:text-blue-500 pb-2 px-1 transition-all whitespace-nowrap">Payments</button>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-12 gap-8 items-start">
+<!-- Left Column: New Clinical Note -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold text-on-background">New Clinical Note</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container rounded transition-colors"><span class="material-symbols-outlined text-lg">format_bold</span></button>
+<button class="p-2 hover:bg-surface-container rounded transition-colors"><span class="material-symbols-outlined text-lg">format_italic</span></button>
+<button class="p-2 hover:bg-surface-container rounded transition-colors"><span class="material-symbols-outlined text-lg">format_list_bulleted</span></button>
+<div class="w-px h-6 bg-outline-variant/30 self-center mx-1"></div>
+<button class="p-2 hover:bg-surface-container rounded transition-colors"><span class="material-symbols-outlined text-lg">link</span></button>
+</div>
+</div>
+<textarea class="w-full h-48 bg-surface border-none rounded-lg focus:ring-2 focus:ring-primary/20 text-sm mb-4 p-4 leading-relaxed" placeholder="Begin typing clinical observations for today's session..."></textarea>
+<div class="flex justify-between items-center">
+<div class="flex gap-2 items-center text-on-surface-variant text-xs">
+<span class="material-symbols-outlined text-sm">lock</span>
+                            Confidential &amp; Encrypted
+                        </div>
+<button class="px-6 py-2.5 bg-gradient-to-br from-primary to-primary-dim text-on-primary rounded-xl text-sm font-semibold shadow-md active:scale-95 transition-all">
+                            Save Note
+                        </button>
+</div>
+</section>
+<!-- Session History Timeline -->
+<section class="space-y-6">
+<h3 class="text-xl font-bold text-on-background px-2">Session History</h3>
+<div class="relative pl-8 space-y-8 before:absolute before:left-3 before:top-4 before:bottom-4 before:w-0.5 before:bg-surface-container-highest">
+<!-- Session Entry 1 -->
+<div class="relative">
+<div class="absolute -left-8 top-1 w-6 h-6 rounded-full bg-secondary flex items-center justify-center ring-4 ring-surface">
+<span class="material-symbols-outlined text-on-secondary text-xs">check</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-on-background">CBT Session - Emotional Regulation</h4>
+<p class="text-xs text-on-surface-variant font-medium">October 24, 2023 • 50 mins</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">more_horiz</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed line-clamp-3">
+                                    Patient reported significant progress in identifying cognitive distortions during peak stress moments. We explored the "Stop-Think-Act" technique...
+                                </p>
+<button class="mt-4 text-primary text-xs font-bold hover:underline">Read Full Entry</button>
+</div>
+</div>
+<!-- Session Entry 2 -->
+<div class="relative">
+<div class="absolute -left-8 top-1 w-6 h-6 rounded-full bg-secondary flex items-center justify-center ring-4 ring-surface">
+<span class="material-symbols-outlined text-on-secondary text-xs">check</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-on-background">Initial Assessment &amp; Goal Setting</h4>
+<p class="text-xs text-on-surface-variant font-medium">October 10, 2023 • 60 mins</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">more_horiz</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed line-clamp-3">
+                                    Comprehensive intake completed. Established three primary goals: reduction in generalized anxiety frequency, improved sleep hygiene, and...
+                                </p>
+<button class="mt-4 text-primary text-xs font-bold hover:underline">Read Full Entry</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sidebar Widgets -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<!-- Attachments Gallery -->
+<section class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold text-on-background">Attachments</h3>
+<button class="text-primary text-xs font-bold">Add New</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="group relative rounded-lg overflow-hidden aspect-square bg-surface-container flex items-center justify-center cursor-pointer">
+<img alt="PDF document" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" data-alt="close up of a professional clinical assessment form on white paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeXdI16_EKnAUKqdrXQvFijG6ODVq5rI79ZKGMQ3UMb1W6uz8tSetvBTOobJqc6iATeJeYAfimltU1sjEBJ5GzkZZbdQaT7SgUSB7k2O5FwSyufmQtrkh__DGYB-wV48V8mcYdXmsURXOroN8Pa2rxKQvcNmi6hdboJr9oB496nJTnxMWlq1ZpwYoJ09VNeMmhBybh1XcEcksvbCbMDSoMqL5_DmDhis9jNaSqEgo5SpPqKTnBxIz2BUDwlttrpzCB4GHKD8x1FmE"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center p-3 text-center">
+<span class="material-symbols-outlined text-primary mb-1">picture_as_pdf</span>
+<p class="text-[10px] font-bold text-on-surface leading-tight">Intake_Form.pdf</p>
+</div>
+</div>
+<div class="group relative rounded-lg overflow-hidden aspect-square bg-surface-container flex items-center justify-center cursor-pointer">
+<img alt="Brain scan diagram" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" data-alt="artistic medical illustration of brain neural pathways in soft blue and lavender tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRxGEVFgnR6X3Y6NzSbDVfK3McjJVoz27jBtm7nx_qHMmBbt6kXehbD4tlWQb_79iqQGzSdh0E8nVWsCYUCfdsT31xaGDhbAdumRx6p-TO46NRGS8KXK6_lR4aYype7JAMtCPKrU83FML7dvt1Ft96XJRFN84b_x1JaEOf0ofcLCOat_ZMbn6jxMuXEPc7SZ73AeL_1AT8NzhwabD_NG2vKkJQ-8fcyOaomR9pvF8wwaGBFF8zoe64q2XeYNg5mE-giQeRosrnkdI"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center p-3 text-center">
+<span class="material-symbols-outlined text-primary mb-1">image</span>
+<p class="text-[10px] font-bold text-on-surface leading-tight">Neuro_Scan.jpg</p>
+</div>
+</div>
+<div class="group relative rounded-lg overflow-hidden aspect-square bg-surface-container flex items-center justify-center cursor-pointer">
+<div class="w-full h-full bg-tertiary/10 flex flex-col items-center justify-center p-3 text-center">
+<span class="material-symbols-outlined text-tertiary mb-1">description</span>
+<p class="text-[10px] font-bold text-on-surface leading-tight">Referral_Ltr.docx</p>
+</div>
+</div>
+<button class="border-2 border-dashed border-outline-variant/30 rounded-lg aspect-square flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-lg mb-1">add</span>
+<p class="text-[10px] font-bold">Upload</p>
+</button>
+</div>
+</section>
+<!-- Restorative Pulse Widget -->
+<section class="bg-gradient-to-br from-secondary-container/30 to-primary-container/30 p-6 rounded-xl border border-white/50 backdrop-blur-sm">
+<h3 class="text-sm font-bold text-on-secondary-container mb-4 uppercase tracking-widest">Sentiment Pulse</h3>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-inner relative overflow-hidden">
+<!-- Organic Pulse Blob -->
+<div class="absolute inset-2 bg-secondary opacity-20 blur-xl animate-pulse"></div>
+<span class="material-symbols-outlined text-secondary text-3xl">sentiment_satisfied</span>
+</div>
+<div>
+<p class="text-lg font-bold text-on-secondary-container">Improving</p>
+<p class="text-xs text-secondary font-medium">+12% from last month</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="h-1.5 w-full bg-white/50 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4 rounded-full"></div>
+</div>
+<p class="text-[11px] text-on-secondary-container font-medium opacity-80 leading-relaxed">
+                            Mariana is showing increased resilience in stress management exercises. Recommendation: Maintain current CBT trajectory.
+                        </p>
+</div>
+</section>
+<!-- Quick Stats -->
+<section class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/5">
+<h3 class="text-sm font-bold text-on-background mb-4">Summary</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-xs text-on-surface-variant font-medium">Total Sessions</span>
+<span class="text-sm font-bold">14</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-on-surface-variant font-medium">Pending Tasks</span>
+<span class="text-sm font-bold text-error">2</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-on-surface-variant font-medium">Next Session</span>
+<span class="text-sm font-bold text-primary">Nov 1, 10:00 AM</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

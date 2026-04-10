@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Finances - Psychology Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#789aff",
+                        "surface-container": "#eaedff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#89f5e7",
+                        "surface-variant": "#dae2fd",
+                        "on-error": "#ffffff",
+                        "outline": "#74777f",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dbe1ff",
+                        "background": "#faf8ff",
+                        "on-tertiary-container": "#c6955e",
+                        "surface-container-high": "#e2e7ff",
+                        "tertiary": "#321b00",
+                        "on-primary-fixed": "#00174b",
+                        "surface-tint": "#0053db",
+                        "on-background": "#131b2e",
+                        "surface-bright": "#faf8ff",
+                        "tertiary-fixed": "#ffddba",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-surface-variant": "#43474e",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#4f2e00",
+                        "surface-container-low": "#f2f3ff",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-secondary-fixed": "#00201d",
+                        "secondary-container": "#86f2e4",
+                        "surface-dim": "#d2d9f4",
+                        "primary-container": "#002f83",
+                        "primary": "#001c56",
+                        "outline-variant": "#c4c6cf",
+                        "tertiary-fixed-dim": "#f2bc82",
+                        "inverse-primary": "#b4c5ff",
+                        "on-secondary-container": "#006f66",
+                        "surface": "#faf8ff",
+                        "on-surface": "#131b2e",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#dae2fd",
+                        "on-tertiary-fixed-variant": "#633f0f",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-tertiary-fixed": "#2b1700",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#006a61",
+                        "inverse-surface": "#283044",
+                        "secondary-fixed-dim": "#6bd8cb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- SideNavBar -->
+<aside class="bg-[#001c56] dark:bg-slate-900 h-screen w-64 fixed left-0 top-0 overflow-y-auto flex flex-col h-full py-6 px-4 shadow-xl z-50">
+<div class="mb-8 px-2">
+<h1 class="text-xl font-bold tracking-tight text-white">Atelier Admin</h1>
+<p class="text-xs text-slate-400 font-medium tracking-wide">Clinical Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:bg-white/5 rounded-xl transition-colors scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:bg-white/5 rounded-xl transition-colors scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-medium">Agenda</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:bg-white/5 rounded-xl transition-colors scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-medium">Patients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#86f2e4] bg-white/10 font-semibold rounded-xl transition-colors scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-medium">Finances</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:bg-white/5 rounded-xl transition-colors scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-medium">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:bg-white/5 rounded-xl transition-colors scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6">
+<button class="w-full bg-[#86f2e4] text-[#006f66] py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Appointment
+            </button>
+<div class="mt-6 flex items-center gap-3 px-2 border-t border-white/10 pt-6">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Clinic Logo" class="w-full h-full object-cover" data-alt="minimalist professional medical clinic logo icon in white on a deep navy background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJkgQ13XkReHojIF08kXqultR34_ONOxnO57QYP7K5pVx1Hpd-wUfV4JMrclZPkHlGhBCpbyGYovM4Oh2ew8XFOmnSK3f8Uo15IPRmAh0zZ-faHnCAQcUB9w2dmwLhCSJNys4Xglkki7JQzFU0IXyrz6yTStMTvjxieQbUtiHieqkwzOkeT27H95fhL4Y2R21biDT2Dl2C4yig0wcVgOETGXxGgxNTjAYL_1pD8SfdDOvyGHQEqrWpAIGcg32cpbJmr8lDFXNRqwc"/>
+</div>
+<div class="overflow-hidden">
+<p class="text-white text-sm font-semibold truncate">Dr. Julianne Moore</p>
+<p class="text-slate-400 text-xs truncate">Clinical Director</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-[#faf8ff]/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center h-16 px-8 ml-64">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-[#006a61] text-sm font-medium" placeholder="Search transactions, patients..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:text-[#001c56] hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-[#001c56] hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-semibold text-slate-500">Receptionist Role</span>
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="professional portrait of a young medical receptionist with a friendly expression in a modern clinic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxz61LNiFr2iN-2JUbEZBnunbBEJP06T-8N5uXjd4-5cX0gD8V4qQDpBcehQUA1aqRQa7wlO1-gzIUN1yDQ21tenF13WzP9MV02KKIi7tiK7KfYxwC-l_f8q9IIzRh_c2Hkp8mfDyJLXR9QqRCu5DOXU040xHw3CbAwJ7GNzg7WG203sDeLybmu7GuMJ7c5BzzehhENChDs3FZpHTHE2-mDuzVMYqhEDIp5sH5nJ8Jg6GuCmBgbG9KsnO5lsEpcyFL-qaPsGSUtXw"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-16 min-h-screen p-8">
+<!-- Summary Header / Hero -->
+<section class="mb-10">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-3xl font-extrabold text-primary tracking-tight mb-1">Financial Overview</h2>
+<p class="text-on-surface-variant font-medium">Manage clinical revenue and patient billing.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-lowest text-primary font-semibold rounded-xl transition-all hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                        Filters
+                    </button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary font-semibold rounded-xl transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+                        Register Payment
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Summary -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 p-8 bg-gradient-to-br from-primary to-primary-container rounded-full relative overflow-hidden text-white flex flex-col justify-between min-h-[180px]">
+<div class="relative z-10">
+<span class="label-md font-semibold text-primary-fixed-dim uppercase tracking-widest text-[10px]">Active Collection Flow</span>
+<h3 class="text-4xl font-extrabold mt-2">$12,450.00</h3>
+<p class="text-primary-fixed-dim text-sm mt-1">Pending Collections for Today (14 sessions)</p>
+</div>
+<div class="relative z-10 flex gap-4 mt-4">
+<div class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full backdrop-blur-md">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span class="text-xs font-bold">+12% vs last week</span>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -right-12 -bottom-12 w-48 h-48 bg-secondary-container/20 rounded-full blur-3xl"></div>
+</div>
+<div class="p-8 bg-surface-container-lowest rounded-full shadow-sm flex flex-col justify-between border-none">
+<div>
+<div class="flex justify-between items-start">
+<span class="label-md font-semibold text-secondary uppercase tracking-widest text-[10px]">Overdue Accounts</span>
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+</div>
+<h3 class="text-3xl font-extrabold text-on-surface mt-2">$2,180</h3>
+</div>
+<div class="mt-4">
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full" style="width: 35%"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-2 font-medium">8 patients with overdue balances</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Payments Table Section -->
+<section class="bg-surface-container-lowest rounded-full shadow-sm overflow-hidden border-none">
+<div class="px-8 py-6 flex justify-between items-center bg-surface-container-low">
+<h3 class="text-lg font-bold text-primary">Recent Transactions</h3>
+<button class="text-primary font-semibold text-sm flex items-center gap-1 hover:underline">
+                    View All Reports <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-none">
+<th class="px-8 py-4 text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Date</th>
+<th class="px-6 py-4 text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Patient</th>
+<th class="px-6 py-4 text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Psychologist</th>
+<th class="px-6 py-4 text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Service</th>
+<th class="px-6 py-4 text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Amount</th>
+<th class="px-6 py-4 text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-8 py-4 text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5">
+<span class="text-sm font-semibold text-on-surface">Oct 24, 2023</span>
+<p class="text-[10px] text-on-surface-variant font-medium uppercase">10:30 AM</p>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs">EK</div>
+<span class="text-sm font-bold text-on-surface">Eleanor Kade</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface">Dr. Sarah Jenkins</td>
+<td class="px-6 py-5">
+<span class="text-xs font-semibold px-2.5 py-1 bg-surface-container rounded-full text-primary">CBT Session</span>
+</td>
+<td class="px-6 py-5 text-sm font-extrabold text-primary">$150.00</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-secondary font-bold text-xs uppercase tracking-tight">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                    Paid
+                                </div>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container-low/30 group hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5">
+<span class="text-sm font-semibold text-on-surface">Oct 24, 2023</span>
+<p class="text-[10px] text-on-surface-variant font-medium uppercase">11:45 AM</p>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-container font-bold text-xs">MR</div>
+<span class="text-sm font-bold text-on-surface">Marcus Rivas</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface">Dr. Leo Thorne</td>
+<td class="px-6 py-5">
+<span class="text-xs font-semibold px-2.5 py-1 bg-surface-container rounded-full text-primary">Family Therapy</span>
+</td>
+<td class="px-6 py-5 text-sm font-extrabold text-primary">$220.00</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-on-tertiary-container font-bold text-xs uppercase tracking-tight">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+                                    Pending
+                                </div>
+</td>
+<td class="px-8 py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="px-3 py-1.5 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded-lg hover:brightness-95">Register</button>
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5">
+<span class="text-sm font-semibold text-on-surface">Oct 23, 2023</span>
+<p class="text-[10px] text-on-surface-variant font-medium uppercase">03:15 PM</p>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold text-xs">HB</div>
+<span class="text-sm font-bold text-on-surface">Hannah Blair</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface">Dr. Sarah Jenkins</td>
+<td class="px-6 py-5">
+<span class="text-xs font-semibold px-2.5 py-1 bg-surface-container rounded-full text-primary">Initial Intake</span>
+</td>
+<td class="px-6 py-5 text-sm font-extrabold text-primary">$180.00</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-error font-bold text-xs uppercase tracking-tight">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                                    Overdue
+                                </div>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors text-error">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container-low/30 group hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5">
+<span class="text-sm font-semibold text-on-surface">Oct 23, 2023</span>
+<p class="text-[10px] text-on-surface-variant font-medium uppercase">09:00 AM</p>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-outline-variant/30 flex items-center justify-center text-primary font-bold text-xs">JL</div>
+<span class="text-sm font-bold text-on-surface">Jeremy Long</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface">Dr. Sarah Jenkins</td>
+<td class="px-6 py-5">
+<span class="text-xs font-semibold px-2.5 py-1 bg-surface-container rounded-full text-primary">CBT Session</span>
+</td>
+<td class="px-6 py-5 text-sm font-extrabold text-primary">$150.00</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-secondary font-bold text-xs uppercase tracking-tight">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                    Paid
+                                </div>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-4 bg-surface-container-low/50 flex justify-between items-center">
+<p class="text-xs text-on-surface-variant font-medium">Showing 1-10 of 42 transactions</p>
+<div class="flex gap-2">
+<button class="p-1.5 bg-surface-container-lowest rounded-lg border border-outline-variant/20 text-on-surface-variant hover:bg-white">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-1.5 bg-surface-container-lowest rounded-lg border border-outline-variant/20 text-on-surface-variant hover:bg-white">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Accounting Focus Section / Quick Actions -->
+<section class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="bg-white p-8 rounded-full border-none shadow-sm flex items-center gap-6 group hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="receipt_long">receipt_long</span>
+</div>
+<div>
+<h4 class="text-xl font-extrabold text-primary">Generate Invoice</h4>
+<p class="text-sm text-on-surface-variant font-medium mt-1">Batch process monthly invoices for insurance claims or private patients.</p>
+<button class="mt-4 text-secondary font-bold text-sm flex items-center gap-1 hover:underline">
+                        Start Batch Process <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="bg-white p-8 rounded-full border-none shadow-sm flex items-center gap-6 group hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<h4 class="text-xl font-extrabold text-primary">Monthly Settlement</h4>
+<p class="text-sm text-on-surface-variant font-medium mt-1">Calculate psychologist commissions and clinical overhead for Oct 2023.</p>
+<button class="mt-4 text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+                        Review Settlements <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+</body></html>

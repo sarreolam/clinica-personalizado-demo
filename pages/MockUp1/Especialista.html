@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#767c7e",
+                        "primary": "#0060ad",
+                        "surface-container-highest": "#dee3e5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#fff7f6",
+                        "surface-container-high": "#e5e9eb",
+                        "secondary-fixed": "#c7fce7",
+                        "on-primary-fixed-variant": "#004681",
+                        "surface-container-low": "#f2f4f5",
+                        "tertiary": "#595994",
+                        "on-tertiary-container": "#32326b",
+                        "surface-tint": "#0060ad",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#baeed9",
+                        "tertiary-fixed-dim": "#a8a8e9",
+                        "on-tertiary-fixed-variant": "#3b3b74",
+                        "on-secondary-fixed-variant": "#3d6d5d",
+                        "secondary": "#376858",
+                        "on-surface-variant": "#5a6062",
+                        "surface": "#f8f9fa",
+                        "on-secondary": "#e4fff2",
+                        "on-primary-container": "#003d71",
+                        "on-background": "#2e3335",
+                        "surface-container": "#ebeef0",
+                        "surface-dim": "#d5dbdd",
+                        "secondary-dim": "#2b5c4c",
+                        "error-dim": "#70030f",
+                        "on-primary": "#f8f8ff",
+                        "error-container": "#f56965",
+                        "inverse-surface": "#0c0f10",
+                        "on-secondary-fixed": "#1f5041",
+                        "on-tertiary": "#fbf7ff",
+                        "tertiary-fixed": "#b6b5f7",
+                        "outline-variant": "#aeb3b5",
+                        "primary-fixed-dim": "#7fb6ff",
+                        "error": "#ac3434",
+                        "on-error-container": "#65000b",
+                        "secondary-container": "#c7fce7",
+                        "on-primary-fixed": "#00284e",
+                        "surface-variant": "#dee3e5",
+                        "inverse-on-surface": "#9b9d9e",
+                        "primary-fixed": "#9ac3ff",
+                        "inverse-primary": "#68abff",
+                        "background": "#f8f9fa",
+                        "on-surface": "#2e3335",
+                        "tertiary-container": "#b6b5f7",
+                        "primary-dim": "#005498",
+                        "tertiary-dim": "#4d4d87",
+                        "on-tertiary-fixed": "#1c1b54",
+                        "primary-container": "#9ac3ff",
+                        "on-secondary-container": "#326353"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar Component -->
+<aside class="bg-slate-50 dark:bg-slate-900 h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-6 z-50 overflow-y-auto">
+<div class="px-6 mb-10">
+<h1 class="text-xl font-bold text-slate-800 dark:text-slate-100">Serenity Clinic</h1>
+<p class="text-xs text-slate-500 font-medium tracking-wide">Admin Portal</p>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<!-- Dashboard Active -->
+<a class="flex items-center px-4 py-3 text-blue-700 dark:text-blue-400 font-bold border-r-4 border-blue-600 bg-slate-100 dark:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="calendar_today">calendar_today</span>
+<span class="text-sm">Agenda</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="groups">groups</span>
+<span class="text-sm">Patients</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="description">description</span>
+<span class="text-sm">Records</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="help">help</span>
+<span class="text-sm">Help Center</span>
+</a>
+<div class="mt-6 flex items-center px-4">
+<img alt="Dr. Arispe" class="w-10 h-10 rounded-full object-cover" data-alt="portrait of a professional male doctor with a warm smile wearing a white medical coat in a bright modern office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARJf63lsgdPU2j32zwmd0NO1TBGdrKCJR5goK2HReBRWSAEV9q6dlovbIDbRISzuMnkfy_omQzxZ-qMvKubYTivdL08EdReijRzib8vurTiOlg3QNlz6FTh_38JtncJ--992FqOr97j2WPRvF-toELK9DNFV189DYJNuSWY-l37GI5Qs0Es8ZRHBRsR9v2EAqDSWPZFA_TP3FZHG01Q4FpzKAJe0jzqQhhajDnDHmupi40lAoGD6sunrXuNJRDenZEv7DuT11SgZU"/>
+<div class="ml-3">
+<p class="text-sm font-bold text-on-surface">Dr. Arispe</p>
+<p class="text-[10px] uppercase tracking-tighter text-on-surface-variant font-semibold">Chief Psychologist</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar Component -->
+<header class="fixed top-0 right-0 left-64 h-16 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md flex items-center justify-between px-8 w-full">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/40 placeholder:text-on-surface-variant/60" placeholder="Search patients, appointments, or notes..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="h-6 w-[1px] bg-outline-variant/30"></div>
+<button class="flex items-center px-4 py-2 bg-secondary-container text-on-secondary-container rounded-lg text-sm font-semibold hover:opacity-90 transition-all scale-98 active:scale-95">
+<span class="material-symbols-outlined mr-2 text-lg" data-icon="person_add">person_add</span>
+                    Add Patient
+                </button>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="pt-24 px-10 pb-12">
+<!-- Welcome Header -->
+<div class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-extrabold text-on-background tracking-tight">Good morning, Dr. Arispe</h2>
+<p class="text-on-surface-variant mt-1 text-lg">You have 6 sessions scheduled for today.</p>
+</div>
+<div class="flex space-x-3">
+<button class="flex items-center px-5 py-2.5 bg-surface-container-lowest text-primary border border-primary/20 rounded-xl text-sm font-semibold hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined mr-2 text-lg" data-icon="upload_file">upload_file</span>
+                        Upload File
+                    </button>
+<button class="flex items-center px-5 py-2.5 bg-gradient-to-br from-primary to-primary-dim text-on-primary rounded-xl text-sm font-semibold shadow-sm hover:opacity-95 transition-all active:scale-95">
+<span class="material-symbols-outlined mr-2 text-lg" data-icon="edit_note">edit_note</span>
+                        Add Clinical Note
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Daily Agenda -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Next Appointment Highlight (The "Glass & Gradient" Rule) -->
+<section class="relative overflow-hidden bg-white/40 dark:bg-slate-900/40 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-sm flex items-center justify-between">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="relative z-10 flex items-center space-x-6">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-2xl flex flex-col items-center justify-center font-bold">
+<span class="text-xs uppercase leading-none">In</span>
+<span class="text-2xl leading-none">15</span>
+<span class="text-[10px] uppercase leading-none">min</span>
+</div>
+<div>
+<span class="text-xs font-bold uppercase text-primary tracking-widest">Next Appointment</span>
+<h3 class="text-xl font-bold mt-1">Isabella Thorne</h3>
+<p class="text-on-surface-variant text-sm">Cognitive Behavioral Therapy • 10:30 AM</p>
+</div>
+</div>
+<button class="relative z-10 px-6 py-2 bg-primary text-white rounded-full text-sm font-bold shadow-md hover:scale-105 transition-transform active:scale-95">
+                            Join Session
+                        </button>
+</section>
+<!-- Daily Agenda Widget -->
+<section class="bg-surface-container-lowest rounded-2xl p-8 shadow-sm">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-bold tracking-tight">Today's Agenda</h3>
+<button class="text-primary font-semibold text-sm flex items-center hover:underline">
+                                Full Calendar
+                                <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="space-y-6">
+<!-- Appointment Item 1 -->
+<div class="flex items-center p-4 hover:bg-surface-container-low rounded-xl transition-colors group">
+<div class="w-16 text-sm font-bold text-on-surface-variant">09:00</div>
+<div class="flex-1 ml-4">
+<h4 class="font-bold text-on-surface">Mark J. Henderson</h4>
+<p class="text-xs text-on-surface-variant">Initial Assessment</p>
+</div>
+<div class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-wider">Completed</div>
+<span class="material-symbols-outlined ml-6 text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+<!-- Appointment Item 2 -->
+<div class="flex items-center p-4 bg-primary/5 border border-primary/10 rounded-xl">
+<div class="w-16 text-sm font-bold text-primary">10:30</div>
+<div class="flex-1 ml-4">
+<h4 class="font-bold text-on-surface">Isabella Thorne</h4>
+<p class="text-xs text-on-surface-variant">CBT Session 4/12</p>
+</div>
+<div class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-[10px] font-bold uppercase tracking-wider">Upcoming</div>
+<span class="material-symbols-outlined ml-6 text-on-surface-variant cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+<!-- Appointment Item 3 -->
+<div class="flex items-center p-4 hover:bg-surface-container-low rounded-xl transition-colors group">
+<div class="w-16 text-sm font-bold text-on-surface-variant">13:00</div>
+<div class="flex-1 ml-4">
+<h4 class="font-bold text-on-surface">Oliver Bennett</h4>
+<p class="text-xs text-on-surface-variant">Follow-up Consult</p>
+</div>
+<div class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">Pending</div>
+<span class="material-symbols-outlined ml-6 text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+<!-- Appointment Item 4 -->
+<div class="flex items-center p-4 hover:bg-surface-container-low rounded-xl transition-colors group">
+<div class="w-16 text-sm font-bold text-on-surface-variant">14:30</div>
+<div class="flex-1 ml-4">
+<h4 class="font-bold text-on-surface">Sarah Drumm</h4>
+<p class="text-xs text-on-surface-variant">Trauma-informed Therapy</p>
+</div>
+<div class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">Pending</div>
+<span class="material-symbols-outlined ml-6 text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Patient Insights & Stats -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<!-- Recent Patients (The Layering Principle) -->
+<section class="bg-surface-container-low rounded-2xl p-6">
+<h3 class="text-lg font-bold mb-6 tracking-tight">Recent Patients</h3>
+<div class="space-y-4">
+<!-- Patient 1 -->
+<div class="flex items-center bg-surface-container-lowest p-3 rounded-xl hover:scale-[1.02] transition-transform cursor-pointer">
+<img alt="Patient" class="w-12 h-12 rounded-lg object-cover" data-alt="close-up portrait of a thoughtful woman in a cozy sweater with soft natural window lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEJIMs8l-kB22-cIUl44JkKw2ZEMOheDkm1KnS9VGQklq6WntMYffI62oqWCD7JqFs_tCz7-AppYXMFvo3jVsi5p25Y0XFWyxh5oUquqOrSoEdFWyL6_XItb5v7bGQdmctDzAq91_StTCviAosSK31VdRCLd89_n8uWW8axL3IA7tigtjknmp3JB3EGJrajMwkUihpIBTwVwFLWPzirpxxifaNxAD6lpJECy5NXLA71GA7Q8wf-kKP-IFMV9olN1nh92MdvjGZiA0"/>
+<div class="ml-3 flex-1">
+<p class="text-sm font-bold text-on-surface">Elena Rodriguez</p>
+<p class="text-[10px] text-on-surface-variant">Viewed 2h ago</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="navigate_next">navigate_next</span>
+</div>
+<!-- Patient 2 -->
+<div class="flex items-center bg-surface-container-lowest p-3 rounded-xl hover:scale-[1.02] transition-transform cursor-pointer">
+<img alt="Patient" class="w-12 h-12 rounded-lg object-cover" data-alt="portrait of a middle-aged man with graying hair and kind eyes in a warm studio light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYG3dc0IsM7-Dsb_mrSOGY6p0QxlSIBzGlTwlOj8lvaILxVzLUIMDziJnaFvDEKVyIG_-lA0VUhes5DF9gCyBQvvHEAeivHMBtYOb7tzcG7PCu3QF0Z0bJWHqpwbdhE8huCqVzypGhlmGYdcBR61pBlVVL_tyd524JxnFdw4SXqPvRQUp0OHucw4k8nTBp4UCd2bAqc-HnxNeV2ID7lo9Lo8WNNqDd-SbuwhsZRuO9WDV4E58lDGy2dOSPJlSZaCVXGKfRC8sVNG4"/>
+<div class="ml-3 flex-1">
+<p class="text-sm font-bold text-on-surface">Jameson Pierce</p>
+<p class="text-[10px] text-on-surface-variant">Viewed 5h ago</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="navigate_next">navigate_next</span>
+</div>
+<!-- Patient 3 -->
+<div class="flex items-center bg-surface-container-lowest p-3 rounded-xl hover:scale-[1.02] transition-transform cursor-pointer">
+<img alt="Patient" class="w-12 h-12 rounded-lg object-cover" data-alt="portrait of a young girl smiling gently in an outdoor setting with vibrant greenery in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrof6g9uq_HODAJOgf4jLOysP1k8AMRBlKpryn9ABMFWZx6AmJPAhaMXR2TY_bQkbxzBUe1wUOl3EyZVDtaW-RLvDfJ4xzvo6VRESVy8rlnwTaASUfGvz2B8kMRsFwWeL8pEw5tT-pGG2XHbMgIcydZxIQne2-pKJtYw_u28eso-eCsinDRhF2SW2WjVb9KTknJRk-ZToQmjq3VjlNhFfzJp9UNgaklfeF05_aHLJLrznaaI5hMQLFhoH7u3OG9vJEwVq9Rvgm2zQ"/>
+<div class="ml-3 flex-1">
+<p class="text-sm font-bold text-on-surface">Lily Zhang</p>
+<p class="text-[10px] text-on-surface-variant">Viewed Yesterday</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="navigate_next">navigate_next</span>
+</div>
+</div>
+<button class="w-full mt-6 py-2 text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors">
+                            Search All Patients
+                        </button>
+</section>
+<!-- Mood Pulse Component -->
+<section class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm relative overflow-hidden">
+<h3 class="text-lg font-bold mb-2 tracking-tight">Clinic Sentiment</h3>
+<p class="text-xs text-on-surface-variant mb-6">Aggregate patient wellness trends</p>
+<div class="relative h-32 flex items-center justify-center">
+<!-- Mood Pulse Blobs -->
+<div class="absolute w-24 h-24 bg-secondary rounded-full blur-3xl opacity-20 -left-4"></div>
+<div class="absolute w-20 h-20 bg-primary rounded-full blur-2xl opacity-20 -right-2"></div>
+<div class="flex items-end space-x-2 h-20">
+<div class="w-6 bg-tertiary-container rounded-t-lg h-12"></div>
+<div class="w-6 bg-tertiary-container rounded-t-lg h-16"></div>
+<div class="w-6 bg-primary rounded-t-lg h-20"></div>
+<div class="w-6 bg-secondary rounded-t-lg h-14"></div>
+<div class="w-6 bg-tertiary-container rounded-t-lg h-10"></div>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+<span>Mon</span>
+<span class="text-primary">Today</span>
+<span>Fri</span>
+</div>
+</section>
+<!-- Summary Stats -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-secondary-container p-4 rounded-xl">
+<p class="text-[10px] uppercase font-bold text-on-secondary-container opacity-70">Hours This Week</p>
+<p class="text-2xl font-extrabold text-on-secondary-container">32.5</p>
+</div>
+<div class="bg-tertiary-container p-4 rounded-xl">
+<p class="text-[10px] uppercase font-bold text-on-tertiary-container opacity-70">Total Records</p>
+<p class="text-2xl font-extrabold text-on-tertiary-container">1,204</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

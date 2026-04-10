@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient File - Psychology Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#789aff",
+                        "surface-container": "#eaedff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#89f5e7",
+                        "surface-variant": "#dae2fd",
+                        "on-error": "#ffffff",
+                        "outline": "#74777f",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dbe1ff",
+                        "background": "#faf8ff",
+                        "on-tertiary-container": "#c6955e",
+                        "surface-container-high": "#e2e7ff",
+                        "tertiary": "#321b00",
+                        "on-primary-fixed": "#00174b",
+                        "surface-tint": "#0053db",
+                        "on-background": "#131b2e",
+                        "surface-bright": "#faf8ff",
+                        "tertiary-fixed": "#ffddba",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-surface-variant": "#43474e",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#4f2e00",
+                        "surface-container-low": "#f2f3ff",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-secondary-fixed": "#00201d",
+                        "secondary-container": "#86f2e4",
+                        "surface-dim": "#d2d9f4",
+                        "primary-container": "#002f83",
+                        "primary": "#001c56",
+                        "outline-variant": "#c4c6cf",
+                        "tertiary-fixed-dim": "#f2bc82",
+                        "inverse-primary": "#b4c5ff",
+                        "on-secondary-container": "#006f66",
+                        "surface": "#faf8ff",
+                        "on-surface": "#131b2e",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#dae2fd",
+                        "on-tertiary-fixed-variant": "#633f0f",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-tertiary-fixed": "#2b1700",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#006a61",
+                        "inverse-surface": "#283044",
+                        "secondary-fixed-dim": "#6bd8cb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #faf8ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar -->
+<aside class="bg-[#001c56] dark:bg-slate-900 font-['Manrope'] antialiased h-screen w-64 fixed left-0 top-0 overflow-y-auto shadow-xl flex flex-col py-6 px-4 z-50">
+<div class="mb-10 px-2">
+<h1 class="text-xl font-bold tracking-tight text-white">Atelier Admin</h1>
+<p class="text-xs text-slate-400">Clinical Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-white/5 transition-colors rounded-xl group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-white/5 transition-colors rounded-xl group" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-medium">Agenda</span>
+</a>
+<!-- Active State: Patients -->
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#86f2e4] bg-white/10 font-semibold rounded-xl group" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-medium">Patients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-white/5 transition-colors rounded-xl group" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-medium">Finances</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-white/5 transition-colors rounded-xl group" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-medium">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-white/5 transition-colors rounded-xl group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-2">
+<button class="w-full bg-[#86f2e4] text-[#006f66] font-bold py-3 rounded-xl scale-95 active:scale-90 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Appointment
+            </button>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-[#faf8ff]/80 backdrop-blur-xl flex justify-between items-center h-16 px-8 ml-64 font-['Manrope'] font-medium">
+<div class="flex items-center gap-4">
+<span class="text-lg font-extrabold text-[#001c56]">Psychology Atelier</span>
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-low border-none rounded-full text-sm w-64 focus:ring-2 focus:ring-[#006a61] transition-all" placeholder="Search patients..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-2">
+<button class="p-2 hover:bg-slate-100 rounded-full transition-colors material-symbols-outlined text-slate-600">notifications</button>
+<button class="p-2 hover:bg-slate-100 rounded-full transition-colors material-symbols-outlined text-slate-600">help</button>
+</div>
+<div class="flex items-center gap-3 pl-4 border-l border-slate-200">
+<div class="text-right">
+<p class="text-xs font-bold text-[#001c56]">Receptionist Role</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-wider">Dr. Aris Thorne Office</p>
+</div>
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="professional portrait of a female receptionist in a modern clinical setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCICNFAdsEH-U0r2DMjT5vfJi3LvbXd6W-3D5IGiTw7KkM2QOfgW2fRIIDJiCji1gL3ZwUcoslfgWnRLYkytmDq0DEAozdguQlyntmk7cjFTL7dIK5vNnzneGqflO5o6p2pixoX0WOwJyEO18AG0VPR1O6UzrhDA2t7BRQrf-qEgHQuM3VTol43pyx8XjI8MUc2R5zCmPu84DxMjjxSEchcfzWccesEWQln0L6jr7xGshweO9Q7OiY82WWo9hu5Qw3EUa0LDP0BxZ8"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-8 pb-12 min-h-screen">
+<!-- Patient Header Card -->
+<section class="bg-surface-container-lowest rounded-xl p-8 mb-8 flex items-start gap-8 relative overflow-hidden group">
+<!-- Decorative Accent -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500"></div>
+<img class="w-32 h-32 rounded-xl object-cover shadow-lg border-4 border-white" data-alt="close-up portrait of a thoughtful young woman in a beige sweater against a soft neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHGQ40uO4xTdkmyOD0ovqo09K4et3QRxM4A4D8SNDQbVDUCjotDvRU7FZ_p822puqI8FeZTMPR6NfV0KbEbf57UOJ1dtqNbar6qRkkMDajHBCo8RVxDyR6TWnlV6qcnta6XwEOVFhaSrVW8tMCCHWjTIXYrdzgx0hEmY0-GJf0rQtLmhH0hN9Wi52GfeQFQPxaArl6H4VBxSZw12XjVqhERXXt-f7I8bevoXu13mks6pwb9kZiIIXKV1pRbuIxoGxWZRecocPz9wY"/>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<h2 class="text-3xl font-extrabold text-primary font-headline tracking-tight">Elena Moretti</h2>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold tracking-wide">ACTIVE TREATMENT</span>
+</div>
+<div class="grid grid-cols-4 gap-6 mt-6">
+<div class="flex flex-col">
+<span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Age / Gender</span>
+<p class="text-sm font-semibold text-on-surface">28 Years • Female</p>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Contact</span>
+<p class="text-sm font-semibold text-on-surface">+39 334 892 001</p>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Primary Diagnosis</span>
+<p class="text-sm font-semibold text-on-surface">Generalized Anxiety Disorder (F41.1)</p>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Last Visit</span>
+<p class="text-sm font-semibold text-secondary">Oct 24, 2023 (4 days ago)</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<button class="bg-primary text-white px-6 py-2.5 rounded-xl text-sm font-bold shadow-md hover:bg-primary-container transition-all">Edit Profile</button>
+<button class="bg-surface-container-low text-primary px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-surface-container-high transition-all">Export PDF</button>
+</div>
+</section>
+<!-- Navigation Tabs -->
+<div class="flex gap-8 mb-8 border-b border-transparent">
+<button class="pb-4 text-primary border-b-4 border-secondary font-bold text-lg transition-all">Session Notes</button>
+<button class="pb-4 text-slate-400 hover:text-primary font-medium text-lg transition-all">Files/Documents</button>
+<button class="pb-4 text-slate-400 hover:text-primary font-medium text-lg transition-all">Treatment History</button>
+</div>
+<!-- Content Grid: Bento Style -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Session Notes Section -->
+<div class="col-span-8 space-y-6">
+<!-- New Note Editor Trigger -->
+<div class="bg-surface-container-low border-2 border-dashed border-outline-variant/30 rounded-xl p-6 flex items-center justify-between group cursor-pointer hover:border-secondary/50 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<div>
+<p class="font-bold text-primary">Capture New Session Insights</p>
+<p class="text-sm text-slate-500">Draft notes for the session on Oct 28, 2023</p>
+</div>
+</div>
+<button class="bg-secondary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<!-- Past Notes List -->
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-l-4 border-secondary transition-all hover:translate-x-1">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Oct 24, 2023 • 14:00 - 15:00</span>
+<h3 class="text-lg font-bold text-primary mt-1">Anxiety Management &amp; Cognitive Reframing</h3>
+</div>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors">more_vert</button>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                            Patient reported increased palpitations during work presentations. We explored the 'worst-case scenario' cognitive distortions. Elena identified a recurring theme of perceived inadequacy...
+                        </p>
+<div class="flex gap-2">
+<span class="bg-surface-container-low text-[10px] font-bold px-2 py-1 rounded text-primary">CBT</span>
+<span class="bg-surface-container-low text-[10px] font-bold px-2 py-1 rounded text-primary">WORK-STRESS</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm transition-all hover:translate-x-1">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Oct 17, 2023 • 14:00 - 15:00</span>
+<h3 class="text-lg font-bold text-primary mt-1">Initial Assessment &amp; Goal Setting</h3>
+</div>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors">more_vert</button>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            Established therapeutic alliance. Discussed boundaries and privacy. Elena expressed primary goals of returning to social activities without panic attacks. Baseline GAD-7 score: 16.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Sidebar / Files Section -->
+<div class="col-span-4 space-y-8">
+<!-- Clinical Summary Panel -->
+<div class="bg-primary p-6 rounded-xl text-white shadow-xl relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline font-bold text-xl mb-4">Clinical Overview</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="text-xs text-white/60">Risk Level</span>
+<span class="text-xs font-bold bg-green-500/20 text-green-400 px-2 py-0.5 rounded">Low</span>
+</div>
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="text-xs text-white/60">Attendance</span>
+<span class="text-xs font-bold text-white">100% (2/2)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-white/60">Next Session</span>
+<span class="text-xs font-bold text-secondary-container">Oct 31, 09:30</span>
+</div>
+</div>
+</div>
+<!-- Aesthetic Glass Blur circle -->
+<div class="absolute -bottom-10 -left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+</div>
+<!-- Files/Documents Section -->
+<div>
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-headline font-bold text-primary">Recent Documents</h4>
+<button class="text-xs font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">upload_file</span>
+                            Add File
+                        </button>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<div class="bg-surface-container-lowest p-3 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="w-10 h-10 bg-error-container text-error rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-bold text-primary truncate">Patient_Consent_Form.pdf</p>
+<p class="text-[10px] text-slate-400">Signed • Oct 17, 2023</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="w-10 h-10 bg-primary-fixed text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-bold text-primary truncate">Referral_Note_GP.docx</p>
+<p class="text-[10px] text-slate-400">Uploaded • Oct 15, 2023</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="w-10 h-10 bg-secondary-container text-on-secondary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="fill" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-bold text-primary truncate">GAD7_Intake_Results.pdf</p>
+<p class="text-[10px] text-slate-400">Score: 16 • Oct 17, 2023</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-4 py-2 text-xs font-bold text-slate-400 hover:text-primary transition-colors">View all 12 documents</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>
